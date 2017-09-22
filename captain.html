@@ -122,341 +122,12 @@
         </div><!--divSet-->
           
 
-         <div id="check-in-modal" class="modal" role="dialog">
-            <div class="modal-dialog modal-lg">
-               <div class="modal-content">
-                  <div class="modal-header"><button class="close" type="button" data-dismiss="modal"></button>
-                  </div>
-                  <!-- modal-header -->
-                  <div class="modal-body">
-                     <h2>Check In</h2>
-                     <hr/>
-                     <form id="captainCheckIn">
-                        <div class="panel">
-                           <label>
-                              Which vessel are you checking out of for the day?
-                              <select id="vessel-name-in" class="soft">
-                                 <option hidden disabled selected value> -- select an option -- </option>
-                                 <option value="Liberty">Liberty</option>
-                                 <option value="Patriot">Patriot</option>
-                              </select>
-                           </label>
-                        </div>
-                        <div class="panel">
-                           <label>Engine Hours</label>
-                           <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" class="soft" />
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Is the vessel clean and orderly from the previous day?</label>
-                           <select id="vesselCleanFromPrevious" class="soft" >
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="true">Yes</option>
-                              <option value="false">No</option>
-                           </select>
-                           <!--hidden div-->
-                           <div id="cleanAdd" class="panel hide">
-                              <label>Comments</label>
-                              <textarea placeholder="Comments Here" class="soft" ></textarea>
-                           </div>
-                           <!--cleanAdd-->
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Fwd Tank Fuel Level in Inches</label>
-                           <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" class="soft" />
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Aft Tank Fuel Level in Inches</label>
-                           <input type="number" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" class="soft" />
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Head down below. <br/> Which tank is the vessel running on?</label>
-                           <select id="fuelTankActive" class="soft" >
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="Fwd">Forward</option>
-                              <option value="Aft">Aft</option>
-                           </select>
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Do the fuel filters appear clean?</label>
-                           <select id="fuelFiltersClean" class="soft" >
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="true">Yes</option>
-                              <option value="false">No</option>
-                           </select>
-                           <!--hidden div-->
-                           <div id="fuelFiltersAdd" class="panel hide">
-                              <label>Comments</label>
-                              <textarea id="fuelFiltersAddComment" placeholder="Comments Here" class="soft" ></textarea>
-                           </div>
-                           <!--fuelFiltersAdd-->
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Is the front drive belt properly tensioned?</label>
-                           <select id="beltTensioned" class="soft" >
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="true">Yes</option>
-                              <option value="false">No</option>
-                           </select>
-                           <!--hidden div-->
-                           <div id="beltAdd" class="panel hide">
-                              <label>Comments</label>
-                              <textarea id="beltAddComment" placeholder="Comments Here" class="soft" ></textarea>
-                           </div>
-                           <!--beltAdd-->
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Is the engine oil at the proper level?</label>
-                           <select id="oilProperLevel" class="soft" >
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="true">Yes</option>
-                              <option value="false">No</option>
-                           </select>
-                           <!--hidden div-->
-                           <div id="engineOilAdd" class="panel hide">
-                              <label>Did you add oil?</label>
-                              <select id="oilAdded" class="soft" >
-                                 <option hidden disabled selected value> -- select an option -- </option>
-                                 <option value="true">Yes</option>
-                                 <option value="false">No</option>
-                              </select>
-                              <!--hidden div-->
-                              <div id="addOilAdd" class="panel hide">
-                                 <label>How much oil did you add, in quarts?</label>
-                                 <input type="text" id="addedOilAmount" placeholder="Oil Added in Quarts" class="soft" />
-                                 <label>Approximately how much oil is left on board now?</label>
-                                 <input type="number" id="oil-on-board" placeholder="Oil Left On Board" class="soft" />
-                              </div>
-                              <!--addOilAdd-->
-                              <!--hidden div-->
-                              <div id="noOilAdd" class="panel hide">
-                                 <label>Why not?</label>
-                                 <textarea placeholder="Explain" class="soft" ></textarea>
-                              </div>
-                              <!--noOilAdd-->
-                           </div>
-                           <!--engineOilAdd-->
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           ]
-                           <label>
-                              Shine a flashlight at the black water tank. <br/> On a scale of 1-10, how full is it?
-                              <select id="black-water-in" class="soft" >
-                                 <option hidden disabled selected value> -- select an option -- </option>
-                                 <option value="1">1</option>
-                                 <option value="2">2</option>
-                                 <option value="3">3</option>
-                                 <option value="4">4</option>
-                                 <option value="5">5</option>
-                                 <option value="6">6</option>
-                                 <option value="7">7</option>
-                                 <option value="8">8</option>
-                                 <option value="9">9</option>
-                                 <option value="10">10</option>
-                              </select>
-                           </label>
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Are there any other non critical items you'd like to add to the log?</label>
-                           <select id="nonCriticalItems" class="soft" >
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="true">Yes</option>
-                              <option value="false">No</option>
-                           </select>
-                           <!--hidden div-->
-                           <div id="nonCriticalAdd" class="panel hide">
-                              <textarea placeholder="Non Critical Items to Log" ></textarea>
-                           </div>
-                           <!--nonCriticalAdd-->
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                           <select id="criticalItems" class="soft" >
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="true">Yes</option>
-                              <option value="false">No</option>
-                           </select>
-                           <!--hidden div-->
-                           <div id="alertManagerAdd" class="panel hide">
-                              <textarea placeholder="Critical Items to Log" class="soft" ></textarea>
-                           </div>
-                           <!--alertManagerAdd-->
-                        </div>
-                        <!--panel-->
-                        <div class="panel">
-                           <button id="captain-check-in-submit" data-dismiss="modal" class="btn button btn-lg btn-danger">Submit</button>
-                        </div>
-                        <!--panel-->
-                     </form>
-                     <!--form captainCheckIn-->
-                     <div class="modal-footer">
-                        <button type="button" id="check-in-modal-button" class="btn btn-default" data-dismiss="modal">Close</button>
-                     </div>
-                  </div>
-                  <!-- modal-body -->
-               </div>
-               <!-- modal-content -->
-            </div>
-            <!-- modal-dialog -->
-         </div>
-         <!-- check-in-modal -->
+        
       </div>
+
       <!--  Main Container -->
       <!-- Footer -->
-      <div id="check-out-modal" class="modal" role="dialog">
-         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-               <div class="modal-header"><button class="close" type="button" data-dismiss="modal"></button>
-               </div>
-               <!-- modal-header -->
-               <div class="modal-body">
-                  <h2>Check Out</h2>
-                  <hr/>
-                  <form id="captainCheckOut">
-                     <div class="panel">
-                        <label>
-                           Which vessel are you checking out of for the day?
-                           <select id="vessel-name-out" class="soft">
-                              <option hidden disabled selected value> -- select an option -- </option>
-                              <option value="Liberty">Liberty</option>
-                              <option value="Patriot">Patriot</option>
-                           </select>
-                        </label>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Engine Hours</label>
-                        <input type="text" id="engine-hours-out" placeholder="Engine Hours Here" class="soft"/>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Which tank did you run on today?</label>
-                        <select id="activeTankOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="Fwd">Fwd</option>
-                           <option value="Aft">Aft</option>
-                        </select>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Fuel levels of the tank you ran on</label>
-                        <input id="active-tank-level-out" type="text" placeholder="Fuel Levels" class="soft"/>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Is the boat clean?</label>
-                        <select id="boatCleanOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                     </div>
-                     <!--panl-->
-                     <div class="panel">
-                        <label>Did the bartender restock?</label>
-                        <select id="barStockOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Are all breakers off, including the 24 volt battery cutoff?</label>
-                        <select id="breakersOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Are the wheelhouse and cash register locked?</label>
-                        <select id="lockedOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Did you do a safe drop?</label>
-                        <select id="safeDropOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                        <!--hidden div-->
-                        <div class="panel hide">
-                           <label>How much did you drop?</label>
-                           <textarea id="safeDropAdd" placeholder="How Much Was Safe Drop" class="soft"></textarea>
-                        </div>
-                        <!--safeDropAdd-->
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Are the lines secure?</label>
-                        <select id="linesSecuredOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Are there any other non critical items you'd like to add to the log?</label>
-                        <select id="nonCriticalItemsOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                        <!--hidden div-->
-                        <div class="panel hide">
-                           <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log" class="soft"></textarea>
-                        </div>
-                        <!--nonCritical1Add-->
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <label>Are there any critical items you'd like management to be alerted on immediately?</label>
-                        <select id="criticalItemsOut" class="soft">
-                           <option hidden disabled selected value> -- select an option -- </option>
-                           <option value="true">Yes</option>
-                           <option value="false">No</option>
-                        </select>
-                        <!--hidden div-->
-                        <div id="criticalAlertAdd" class="panel hide">
-                           <textarea id="criticalCommentsOut" placeholder="Critical Items to Log" class="soft"></textarea>
-                        </div>
-                        <!--criticalAlertAdd-->
-                     </div>
-                     <!--panel-->
-                     <div class="panel">
-                        <button id="captain-check-out-submit" data-dismiss="modal" class="button btn-lg btn btn-danger">Submit</button>
-                     </div>
-                     <!--panel-->
-                  </form>
-                  <!--form captainCheckOut-->
-                  <div class="modal-footer">
-                     <button type="button" id="check-out-modal-button" class="btn btn-default" data-dismiss="modal">Close</button>
-                     <!--  modal footer -->
-                  </div>
-                  <!-- modal-body -->
-               </div>
-               <!-- modal-content -->
-            </div>
-            <!-- modal-dialog -->
-         </div>
-         <!-- check-in-modal -->
+      <
       </div>
       <!--  Main Container -->
       <!-- Footer -->
@@ -837,5 +508,341 @@
       <script src="assets/js/forms.js"></script>
       <script src="assets/js/submit.js"></script>
       <script src="assets/js/weather.js"></script>
+
+<!-- modals
+ -->
+ <div id="check-in-modal" class="modal" role="dialog">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                  <div class="modal-header"><button class="close" type="button" data-dismiss="modal"></button>
+                  </div>
+                  <!-- modal-header -->
+                  <div class="modal-body">
+                     <h2>Check In</h2>
+                     <hr/>
+                     <form id="captainCheckIn">
+                        <div class="panel">
+                           <label>
+                              Which vessel are you checking out of for the day?
+                              <select id="vessel-name-in" class="soft">
+                                 <option hidden disabled selected value> -- select an option -- </option>
+                                 <option value="Liberty">Liberty</option>
+                                 <option value="Patriot">Patriot</option>
+                              </select>
+                           </label>
+                        </div>
+                        <div class="panel">
+                           <label>Engine Hours</label>
+                           <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" class="soft" />
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Is the vessel clean and orderly from the previous day?</label>
+                           <select id="vesselCleanFromPrevious" class="soft" >
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="true">Yes</option>
+                              <option value="false">No</option>
+                           </select>
+                           <!--hidden div-->
+                           <div id="cleanAdd" class="panel hide">
+                              <label>Comments</label>
+                              <textarea placeholder="Comments Here" class="soft" ></textarea>
+                           </div>
+                           <!--cleanAdd-->
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Fwd Tank Fuel Level in Inches</label>
+                           <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" class="soft" />
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Aft Tank Fuel Level in Inches</label>
+                           <input type="number" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" class="soft" />
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Head down below. <br/> Which tank is the vessel running on?</label>
+                           <select id="fuelTankActive" class="soft" >
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="Fwd">Forward</option>
+                              <option value="Aft">Aft</option>
+                           </select>
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Do the fuel filters appear clean?</label>
+                           <select id="fuelFiltersClean" class="soft" >
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="true">Yes</option>
+                              <option value="false">No</option>
+                           </select>
+                           <!--hidden div-->
+                           <div id="fuelFiltersAdd" class="panel hide">
+                              <label>Comments</label>
+                              <textarea id="fuelFiltersAddComment" placeholder="Comments Here" class="soft" ></textarea>
+                           </div>
+                           <!--fuelFiltersAdd-->
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Is the front drive belt properly tensioned?</label>
+                           <select id="beltTensioned" class="soft" >
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="true">Yes</option>
+                              <option value="false">No</option>
+                           </select>
+                           <!--hidden div-->
+                           <div id="beltAdd" class="panel hide">
+                              <label>Comments</label>
+                              <textarea id="beltAddComment" placeholder="Comments Here" class="soft" ></textarea>
+                           </div>
+                           <!--beltAdd-->
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Is the engine oil at the proper level?</label>
+                           <select id="oilProperLevel" class="soft" >
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="true">Yes</option>
+                              <option value="false">No</option>
+                           </select>
+                           <!--hidden div-->
+                           <div id="engineOilAdd" class="panel hide">
+                              <label>Did you add oil?</label>
+                              <select id="oilAdded" class="soft" >
+                                 <option hidden disabled selected value> -- select an option -- </option>
+                                 <option value="true">Yes</option>
+                                 <option value="false">No</option>
+                              </select>
+                              <!--hidden div-->
+                              <div id="addOilAdd" class="panel hide">
+                                 <label>How much oil did you add, in quarts?</label>
+                                 <input type="text" id="addedOilAmount" placeholder="Oil Added in Quarts" class="soft" />
+                                 <label>Approximately how much oil is left on board now?</label>
+                                 <input type="number" id="oil-on-board" placeholder="Oil Left On Board" class="soft" />
+                              </div>
+                              <!--addOilAdd-->
+                              <!--hidden div-->
+                              <div id="noOilAdd" class="panel hide">
+                                 <label>Why not?</label>
+                                 <textarea placeholder="Explain" class="soft" ></textarea>
+                              </div>
+                              <!--noOilAdd-->
+                           </div>
+                           <!--engineOilAdd-->
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           ]
+                           <label>
+                              Shine a flashlight at the black water tank. <br/> On a scale of 1-10, how full is it?
+                              <select id="black-water-in" class="soft" >
+                                 <option hidden disabled selected value> -- select an option -- </option>
+                                 <option value="1">1</option>
+                                 <option value="2">2</option>
+                                 <option value="3">3</option>
+                                 <option value="4">4</option>
+                                 <option value="5">5</option>
+                                 <option value="6">6</option>
+                                 <option value="7">7</option>
+                                 <option value="8">8</option>
+                                 <option value="9">9</option>
+                                 <option value="10">10</option>
+                              </select>
+                           </label>
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Are there any other non critical items you'd like to add to the log?</label>
+                           <select id="nonCriticalItems" class="soft" >
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="true">Yes</option>
+                              <option value="false">No</option>
+                           </select>
+                           <!--hidden div-->
+                           <div id="nonCriticalAdd" class="panel hide">
+                              <textarea placeholder="Non Critical Items to Log" ></textarea>
+                           </div>
+                           <!--nonCriticalAdd-->
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <label>Are there any critical items you'd like management to be alerted on immediately?</label>
+                           <select id="criticalItems" class="soft" >
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="true">Yes</option>
+                              <option value="false">No</option>
+                           </select>
+                           <!--hidden div-->
+                           <div id="alertManagerAdd" class="panel hide">
+                              <textarea placeholder="Critical Items to Log" class="soft" ></textarea>
+                           </div>
+                           <!--alertManagerAdd-->
+                        </div>
+                        <!--panel-->
+                        <div class="panel">
+                           <button id="captain-check-in-submit" data-dismiss="modal" class="btn button btn-lg btn-danger">Submit</button>
+                        </div>
+                        <!--panel-->
+                     </form>
+                     <!--form captainCheckIn-->
+                     <div class="modal-footer">
+                        <button type="button" id="check-in-modal-button" class="btn btn-default" data-dismiss="modal">Close</button>
+                     </div>
+                  </div>
+                  <!-- modal-body -->
+               </div>
+               <!-- modal-content -->
+            </div>
+            <!-- modal-dialog -->
+         </div>
+         <!-- check-in-modal -->
+
+div id="check-out-modal" class="modal" role="dialog">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-header"><button class="close" type="button" data-dismiss="modal"></button>
+               </div>
+               <!-- modal-header -->
+               <div class="modal-body">
+                  <h2>Check Out</h2>
+                  <hr/>
+                  <form id="captainCheckOut">
+                     <div class="panel">
+                        <label>
+                           Which vessel are you checking out of for the day?
+                           <select id="vessel-name-out" class="soft">
+                              <option hidden disabled selected value> -- select an option -- </option>
+                              <option value="Liberty">Liberty</option>
+                              <option value="Patriot">Patriot</option>
+                           </select>
+                        </label>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Engine Hours</label>
+                        <input type="text" id="engine-hours-out" placeholder="Engine Hours Here" class="soft"/>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Which tank did you run on today?</label>
+                        <select id="activeTankOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="Fwd">Fwd</option>
+                           <option value="Aft">Aft</option>
+                        </select>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Fuel levels of the tank you ran on</label>
+                        <input id="active-tank-level-out" type="text" placeholder="Fuel Levels" class="soft"/>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Is the boat clean?</label>
+                        <select id="boatCleanOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                     </div>
+                     <!--panl-->
+                     <div class="panel">
+                        <label>Did the bartender restock?</label>
+                        <select id="barStockOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Are all breakers off, including the 24 volt battery cutoff?</label>
+                        <select id="breakersOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Are the wheelhouse and cash register locked?</label>
+                        <select id="lockedOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Did you do a safe drop?</label>
+                        <select id="safeDropOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                        <!--hidden div-->
+                        <div class="panel hide">
+                           <label>How much did you drop?</label>
+                           <textarea id="safeDropAdd" placeholder="How Much Was Safe Drop" class="soft"></textarea>
+                        </div>
+                        <!--safeDropAdd-->
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Are the lines secure?</label>
+                        <select id="linesSecuredOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Are there any other non critical items you'd like to add to the log?</label>
+                        <select id="nonCriticalItemsOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                        <!--hidden div-->
+                        <div class="panel hide">
+                           <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log" class="soft"></textarea>
+                        </div>
+                        <!--nonCritical1Add-->
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <label>Are there any critical items you'd like management to be alerted on immediately?</label>
+                        <select id="criticalItemsOut" class="soft">
+                           <option hidden disabled selected value> -- select an option -- </option>
+                           <option value="true">Yes</option>
+                           <option value="false">No</option>
+                        </select>
+                        <!--hidden div-->
+                        <div id="criticalAlertAdd" class="panel hide">
+                           <textarea id="criticalCommentsOut" placeholder="Critical Items to Log" class="soft"></textarea>
+                        </div>
+                        <!--criticalAlertAdd-->
+                     </div>
+                     <!--panel-->
+                     <div class="panel">
+                        <button id="captain-check-out-submit" data-dismiss="modal" class="button btn-lg btn btn-danger">Submit</button>
+                     </div>
+                     <!--panel-->
+                  </form>
+                  <!--form captainCheckOut-->
+                  <div class="modal-footer">
+                     <button type="button" id="check-out-modal-button" class="btn btn-default" data-dismiss="modal">Close</button>
+                     <!--  modal footer -->
+                  </div>
+                  <!-- modal-body -->
+               </div>
+               <!-- modal-content -->
+            </div>
+            <!-- modal-dialog -->
+         </div>
+         <!-- check-out-modal -->
    </body>
 </html>

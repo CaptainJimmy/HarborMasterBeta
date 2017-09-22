@@ -37,7 +37,7 @@ $('#captainRole, #managerRole').click(function () {
 
 $("body").on("click",'#show-modal-check-in',function(){
     $('#check-in-modal').modal();
-      $('#arrival-div').addClass("hide").removeClass("show");
+     // $('#arrival-div').addClass("hide").removeClass("show");
 });
 
 $("body").on("click",'#show-modal-check-out',function(){
