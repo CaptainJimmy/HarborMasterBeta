@@ -1,0 +1,986 @@
+<!doctype html>
+<html id="captainForms" class="no-js" lang="en" dir="ltr">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harbor Master</title>
+    <!--link rel="stylesheet" href="css/foundation.css"-->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/boat-favicon.png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius" rel="stylesheet">
+    <!--link rel="stylesheet" href="assets/css/style.css"-->
+    <link rel="stylesheet" href="assets/css/app.css">
+ 
+  </head>
+  <body id="captain">
+      <div class="grid-container">
+
+        <div id="navMenu" class="hide">
+          <div class="grid-x grid-padding-x small-12">
+
+            <ul class="menu menu-hover-lines">
+              <li id="li1" class="active"><a href="#" id="captainRole">Captain</a></li>
+              <li id="li2"><a href="#" id="managerRole">Manager</a></li>
+              <li><a href="#" id="signout">Log Out</a></li>
+            </ul>
+
+          </div>
+        </div><!---nav-->
+
+
+        <!--select your role-->
+        <div id="roleCall" class="show small-12 cell">
+          <section class="marketing-site-two-up">
+            <h2 class="marketing-site-two-up-headline">Select Your Role</h2>
+            <div class="row medium-unstack">
+              <div class="columns">
+                <i class="fa fa-ship" aria-hidden="true"></i>
+                <h4 class="marketing-site-two-up-title">Look at me. <br/>I'm the captain now.</h4>
+                <a href="#" id="iAmCaptain" class="orange peel button button hollow marketing-site-two-up-desc">Captain</a>
+              </div><!--columns-->
+              <div class="columns">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                <h4 class="marketing-site-two-up-title">Yea, I'm gonna need you to come in on Saturday.</h4>
+                <a href="#" id="iAmManager" class="orange button button hollow marketing-site-two-up-desc">Manager</a>
+              </div><!--columns-->
+            </div><!--row medium-unstack-->
+          </section>
+        </div><!--roleCall-->
+
+      <div id="divSet1" class="hide small-12">
+        
+          <!--Check In-->
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
+                
+                <h3>Check In</h3>
+            
+                <hr/>
+            
+                <form id="captainCheckIn">
+                    
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Which vessel are you checking out of for the day?
+                        <select id="vessel-name-in" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Engine Hours</label>
+                      <input type="number" id="engine-hours-in" placeholder="Engine Hours Here" class="soft" />
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+      
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                    <label>Is the vessel clean and orderly from the previous day?</label>
+                    <select id="vesselCleanFromPrevious" class="soft" >
+                      <option hidden disabled selected value> -- select an option -- </option>
+                      <option value="true">Yes</option>
+                      <option value="false">No</option>
+                    </select>
+                  
+                    <!--hidden div-->
+                    <div id="cleanAdd" class="small-12 cell hide">
+                      <label>Comments</label>
+                      <textarea placeholder="Comments Here" class="soft" ></textarea>
+                    </div><!--cleanAdd-->
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                  
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Fwd Tank Fuel Level in Inches</label>
+                      <input type="number" id="fwd-fuel-in" placeholder="Fwd Tank Fuel Levels in Inches" class="soft" />
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Aft Tank Fuel Level in Inches</label>
+                      <input type="number" id="aft-fuel-in" placeholder="Aft Tank Fuel Levels in Inches" class="soft" />
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Head down below. <br/> Which tank is the vessel running on?</label>
+                      <select id="fuelTankActive" class="soft" >
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="Fwd">Forward</option>
+                        <option value="Aft">Aft</option>
+                      </select>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                 
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Do the fuel filters appear clean?</label>
+                      <select id="fuelFiltersClean" class="soft" >
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div id="fuelFiltersAdd" class="small-12 cell hide">
+                        <label>Comments</label>
+                        <textarea id="fuelFiltersAddComment" placeholder="Comments Here" class="soft" ></textarea>
+                      </div><!--fuelFiltersAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Is the front drive belt properly tensioned?</label>
+                      <select id="beltTensioned" class="soft" >
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div id="beltAdd" class="small-12 cell hide">
+                        <label>Comments</label>
+                        <textarea id="beltAddComment" placeholder="Comments Here" class="soft" ></textarea>
+                      </div><!--beltAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Is the engine oil at the proper level?</label>
+                      <select id="oilProperLevel" class="soft" >
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select> 
+                  
+                      <!--hidden div-->
+                      <div id="engineOilAdd" class="small-12 cell hide">
+
+                        <label>Did you add oil?</label>
+                        <select id="oilAdded" class="soft" >
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                    
+                        <!--hidden div-->
+                        <div id="addOilAdd" class="small-12 cell hide">
+                      
+                        <label>How much oil did you add, in quarts?</label>
+                        <input type="text" id="addedOilAmount" placeholder="Oil Added in Quarts" class="soft" />
+                        <label>Approximately how much oil is left on board now?</label>
+                        <input type="number" id="oil-on-board" placeholder="Oil Left On Board" class="soft" />
+                   
+                        </div><!--addOilAdd-->
+
+                        <!--hidden div-->
+                        <div id="noOilAdd" class="small-12 cell hide">
+                      
+                          <label>Why not?</label>
+                          <textarea placeholder="Explain" class="soft" ></textarea>
+                   
+                        </div><!--noOilAdd-->
+                  
+                      </div><!--engineOilAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Shine a flashlight at the black water tank. <br/> On a scale of 1-10, how full is it?
+                        <select id="black-water-in" class="soft" >
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Are there any other non critical items you'd like to add to the log?</label>
+                        <select id="nonCriticalItems" class="soft" >
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                  
+                      <!--hidden div-->
+                      <div id="nonCriticalAdd" class="small-12 cell hide">
+                    
+                        <textarea placeholder="Non Critical Items to Log" ></textarea>
+                  
+                      </div><!--nonCriticalAdd-->
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                  
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Are there any critical items you'd like management to be alerted on immediately?</label>
+                        <select id="criticalItems" class="soft" >
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                  
+                      <!--hidden div-->
+                      <div id="alertManagerAdd" class="small-12 cell hide">
+                    
+                        <textarea placeholder="Critical Items to Log" class="soft" ></textarea>
+                  
+                      </div><!--alertManagerAdd-->
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <a href="#" id="captain-check-in-submit" class="orange expanded button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                </form><!--form captainCheckIn-->
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+
+          <!--Check Out-->
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
+                
+                <h3>Check Out</h3>
+
+                <hr/>
+           
+                <form id="captainCheckOut">
+                
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Which vessel are you checking out of for the day?
+                        <select id="vessel-name-out" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->   
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Engine Hours</label>
+                      <input type="text" id="engine-hours-out" placeholder="Engine Hours Here" class="soft"/>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Which tank did you run on today?</label>
+                      <select id="activeTankOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="Fwd">Fwd</option>
+                        <option value="Aft">Aft</option>
+                      </select>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Fuel levels of the tank you ran on</label>
+                      <input id="active-tank-level-out" type="text" placeholder="Fuel Levels" class="soft"/>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Is the boat clean?</label>
+                      <select id="boatCleanOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                    
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Did the bartender restock?</label>
+                      <select id="barStockOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Are all breakers off, including the 24 volt battery cutoff?</label>
+                      <select id="breakersOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Are the wheelhouse and cash register locked?</label>
+                      <select id="lockedOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Did you do a safe drop?</label>
+                      <select id="safeDropOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div class="small-12 cell hide">
+                    
+                        <label>How much did you drop?</label>
+                        <textarea id="safeDropAdd" placeholder="How Much Was Safe Drop" class="soft"></textarea>
+                  
+                      </div><!--safeDropAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Are the lines secure?</label>
+                      <select id="linesSecuredOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Are there any other non critical items you'd like to add to the log?</label>
+                      <select id="nonCriticalItemsOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div class="small-12 cell hide">
+                    
+                        <textarea id="nonCriticalCommentsOut" placeholder="Non Critical Items to Log" class="soft"></textarea>
+                  
+                      </div><!--nonCritical1Add-->
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Are there any critical items you'd like management to be alerted on immediately?</label>
+                      <select id="criticalItemsOut" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div id="criticalAlertAdd" class="small-12 cell hide">
+                    
+                        <textarea id="criticalCommentsOut" placeholder="Critical Items to Log" class="soft"></textarea>
+                  
+                      </div><!--criticalAlertAdd-->
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+    
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <a href="#" id="captain-check-out-submit" class="orange expanded button">Submit</a>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                </form><!--form captainCheckOut-->
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-paddin-x-->
+
+          <!-- Trip Manifest -->
+            <div class="grid-x grid-padding-x">
+              <div class="small-12 cell">
+                <div class="callout">
+            
+                <h3>Trip Manifest <br/> Departure</h3>
+
+                <hr/>
+                <!-- ADDED BY JIM FOR FEEDBACK AFTER SUBMIT -->
+                <div id="formMessage"></div>
+                <form id="tripManifest">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Which vessel are you using?
+                        <select id="vesselActiveForTrip" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Which trip are you doing?</label>
+
+                      <select class="soft" id="tripName">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="HarborTour">Harbor Tour</option>
+                        <option value="SunsetCruise">Sunset Cruise</option>
+                        <option value="CityLights">City Lights</option>
+                        <option value="PrivateCharter">2 Hour Private Charter</option>
+                        <option value="BoozeCruise">Booze Cruise</option>
+                        <option value="SchuylkillBanks">Penns Landing to Schuylkill Banks</option>
+                        <option value="WalnutToWalnut">Walnut To Walnut</option>
+                        <option value="Secrets">Secrets of the Schuylkill</option>
+                        <option value="SeaportCamp">Seaport Kids Campers</option>
+                        <option value="Bartrams">Bartrams Garden</option>
+                        <option value="NonRev">Non Revenue trip</option>
+                      </select>
+
+                  
+                        <!--hidden div-->
+                        <!-- <div id="bartramsAdd" class="small-12 cell hide">
+                      
+                          <label>Deporting Dock?</label>
+                          <select id="bartramsDepartingDock" class="soft">
+                            <option hidden disabled selected value> - select an option - </option>
+                            <option value="Walnut">Walnut</option>
+                            <option value="Bartrams">Bartrams</option>
+                          </select> -->
+                    
+                        <!-- </div> --><!--bartramsAdd-->
+                      
+                        <!--hidden div-->
+                       <!--  <div id="otherPassAdd" class="small-12 cell hide">
+                      
+                          <input type="text" id="otherPass" placeholder="What Kind of Trip" class="soft"/>
+                    
+                        </div> --><!--otherPassAdd-->
+                    
+                        <!--hidden div-->
+                        <div id="otherNonAdd" class="small-12 cell hide">
+                      
+                          <input type="text" id="otherNon" placeholder="What Kind of Trip" class="soft"/>
+                    
+                        </div><!--otherNonAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Scheduled Departure Time</label>
+                      <input type="time" id="scheduled-departure" class="form-control soft"/>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Did you leave on time?</label>
+                      <select id="onTime" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div id="onTimeAdd" class="small-12 cell hide">
+                        
+                        <label>Actual Departure Time</label>
+                        <input type="time" id="actual-departure" class="form-control soft"/>
+                      
+                      </div><!--ontimeAdd-->
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Number of passengers on board</label>
+                      <input type="number" id="passenger-count" placeholder="# of Passengers" class="soft"/>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Number of crew members on board</label>
+                      <input type="number" id="crew-count" placeholder="# of Crew Members" class="soft"/>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                       <label>Names of crew members on board</label>
+                      <input type="text" id="crew-names" placeholder="Names" class="soft"/>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#formMessage" id="manifest-submit" class=" orange expanded button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                </form><!--form Trip Manifest Departure-->
+
+                </div><!--callout-->
+              </div><!--small-12 cell-->
+            </div><!--grid-x grid-padding-x-->
+          
+          <!-- Trip Manifest Arrival -->
+            
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
+        
+                <h3>Active Trips</h3>
+
+                <hr/>
+
+                <p>Press the refresh button to get trips.</p>
+
+                <button class="orange button button expanded" id="active-trips-refresh">Refresh</button>
+      
+                <div id="active-trips" class="reportInfo small-12">
+
+                </div>
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->  
+
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
+
+                <h3>Trip Manifest <br/> Arrival</h3>
+
+                <hr/>
+
+                <form id="tripManifestReturn">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <label>Scheduled Arrival Time</label>
+
+                      <input type="time" id="scheduledArrivalTime" class="soft"/>
+           
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>Did you arrive on time?</label>
+                      <select id="arriveOnTime" class="soft">
+                        <option hidden disabled selected value> -- select an option -- </option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                  
+                      <!--hidden div-->
+                      <div id="arriveOnTimeAdd" class="small-12 cell hide">
+                    
+                        <label>Actual Arrival Time</label>
+                        <input type="time" class="orange expanded button soft"/>
+                  
+                      </div><!--arriveOnTimeAdd-->
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#" id="tripArrivalSubmit" class="orange expanded button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                    
+                </form><!--form tripManifestReturn-->
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x-grid-padding-x-->
+
+          <!--Vessel Procedures-->
+          <div class="grid-x grid-padding-x">
+            <div class="small-12 cell">
+              <div class="callout">
+            
+                <h3>Vessel Procedures</h3>
+
+                <hr/>
+            
+                <form id="vesselProcedures">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+                  
+                      <h5>Waste Tank Pump Out</h5>
+                      <label>Which vessel was pumped out?
+                        <select id="vessel-pumped" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#" id="vessel-pumped-out-submit" class="orange expanded button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                
+                </form><!--vesselProcedures-->
+                <form id="vesselProcedures1">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <h5>Fueling</h5>
+                      <label>Which vessel was fueled?
+                        <select id="vessel-fueled" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>How many gallons were added to the forward tank?</label>
+                      <input type="number" id="gallonsAddedFwd" placeholder="gallonsAddedFwd" class="soft"/>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>How many gallons were added to the aft tank?</label>
+                      <input type="number" id="gallonsAddedAft" placeholder="gallonsAddedAft" class="soft"/>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <label>What was the total amount spent?</label>
+                      <input type="number" id="fuelAmountSpent" class="soft"/>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#" id="vesselFueledSubmit" class="orange expanded button">Submit</a>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                    
+                </form><!--vesselProcedures1-->
+
+                <form id="vesselProcedures2">
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <h5>Fresh Water Tank Fill</h5>
+                      <label>Which water tank was filled?
+                        <select id="vessel-watered" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#" id="waterTankFilledSubmit" class="orange expanded button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <h5>Vessel Wash</h5>
+                      <label>Which vessel was washed?
+                        <select id="vessel-washed" class="soft">
+                          <option hidden disabled selected value> -- select an option -- </option>
+                          <option value="Liberty">Liberty</option>
+                          <option value="Patriot">Patriot</option>
+                        </select>
+                      </label>
+
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+
+                  <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell">
+
+                      <a href="#" id="vesselWashedSubmit" class="orange expanded button">Submit</a>
+                
+                    </div><!--small-12 cell-->
+                  </div><!--grid-x grid-padding-x-->
+                    
+                </form><!--vesselProcedures2-->
+              
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+        </div><!--divSet1-->
+
+        <div id="divSet2" class="hide small-12">
+
+          <div class="grid-x grid-padding-x managerDiv">
+            <div class="small-12 cell">
+              <div class="callout">
+              
+                <h1>Harbor Master Manager Console</h1>
+              
+                <p> Select a button below for a current report.</p>
+              
+                <div class="button-group">
+                
+                  <button class="orange button" id="patriot-status">Patriot Vessel Status</button>
+                
+                  <button class="orange button" id="liberty-status">Liberty Vessel Status</button>
+              
+                </div>
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+
+          <div class="grid-x grid-padding-x managerDiv">
+            <div class="small-12 cell">
+              <div class="callout">
+        
+                <h2>Active Trips. <br/> Press the Refresh Button to Get Trips: </h2>
+
+                <button class="orange button button expanded" id="active-trips-refresh2">Refresh</button>
+        
+                <div id="active-trips" class="reportInfo"></div>
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+    
+          <div class="grid-x grid-padding-x managerDiv">
+            <div class="small-12 cell">
+              <div class="callout">
+
+                <h2>Report Info</h2>
+        
+                <div id="report-output"></div>
+
+              </div><!--callout-->
+            </div><!--small-12 cell-->
+          </div><!--grid-x grid-padding-x-->
+        </div><!--divSet-->
+
+        <!--Current Forecast-->
+          <div class="small-4 cell">
+            <div class="callout managerDiv">
+
+              <h3>Current Forecast</h3>
+
+              <hr/>
+              
+              <p><span id="location"></span></p>
+              <p><span id="desc"></span><div id="icon"></div></p>
+              <p><span id="current-temp"></span></p>
+              <p><span id="high-temp"></span> | <span id="low-temp"></span></p>
+            
+            </div><!--callout-->
+          </div><!--small-12 cell-->
+          
+
+          <!--Marine Forecast-->
+          <div class="small-4 cell">
+            <div class="callout managerDiv">
+              
+              <h3>Weather Alerts</h3>
+
+              <hr/>
+
+              <p><span id="alert-title"></span></p>
+              <p><span id="alert-start-date"></span></p>
+              <p><span id="alert-exp-date"></span></p>
+              <p><span id="alert-summary"></span></p>
+            
+            </div><!--callout-->
+          </div><!--small-12 cell-->
+
+          <!--Current Location-->
+          <div class="small-4 cell">
+            <div class="callout managerDiv">
+              
+              <h3>Current Radar</h3>
+
+              <hr/>
+
+                <div class="grid-container">
+                  
+                <div id="map-container"></div>
+                  
+                <p><span id="marine-layer"></span></p>
+
+              </div>
+            </div><!--callout-->
+          </div><!--small-12 cell-->
+
+        <div id ="bar" class="hide">
+          <div class="mobile-bottom-bar">
+            <a href="#" class="footer-link">
+            <i class="fa fa-sign-out"></i> <span class='footer-text'>Log out</span>
+            </a>
+          </div><!--mobile-botton-bar-->
+        </div><!--bar-->
+          
+      </div><!--grid-container-->
+  
+    <!--script tags-->
+      <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+      <script src="https://use.fontawesome.com/8f3c3c358f.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.0.1/what-input.js" type="text/javascript" charset="utf-8" async defer></script>
+      <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+      <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js" type="text/javascript" charset="utf-8" async defer></script>
+    <!-- Google Maps API -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDi2Zs7n8LyknyyVYiiYfVh3XoxHmzSoIo"></script>
+      <script src="assets/js/form.js"></script>
+      <script src="assets/js/submit.js"></script>
+      <script src="assets/js/weather.js"></script>
+
+
+  </body>
+</html>

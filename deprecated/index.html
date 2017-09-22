@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-cookiepolicy" content="single_host_origin">
+    <meta name="google-signin-client_id" content="411348476711-0j71s6pf6qda8equhp1nr7ua6abhbq8.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+	<title>HarborMaster</title>
+
+	<!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/boat-favicon.png" />
+
+    <!-- Firebase Reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD2IqtC1ckzWzD4vR9ucDFsxwMYWa7PYXI",
+        authDomain: "harbormaster-da7e3.firebaseapp.com",
+        databaseURL: "https://harbormaster-da7e3.firebaseio.com",
+        projectId: "harbormaster-da7e3",
+        storageBucket: "harbormaster-da7e3.appspot.com",
+        messagingSenderId: "940441283597"
+      };
+      firebase.initializeApp(config);
+    </script>
+   <!-- NOT NECESSARY - FIREBASE.JS INCLUDES ALL BELOW -->
+<!--     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script> -->
+    <script src="assets/js/scripts.js"></script>
+
+   	<!-- Foundation Compressed CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+
+     <!-- Bootstrap compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Additional Styles -->
+   	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-social.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-fixed-top navBer">
+        <div class="navbar-header">
+            <a class="navbar-brand" href=""> 
+                <img src="assets/images/boat-logo.png" class="boat"> <h1>HarborMaster</h1>
+            </a>
+        </div>
+    </nav>
+
+	<div class="page-container">
+        <h2>Login</h2>
+        
+        <form id="app">
+            <input type="text" id="email" name="email" placeholder="Email">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button type="button" id="quickstart-sign-in" name="signin">Sign in</button>
+            <button type="button" id="quickstart-sign-up" name="signup">Register</button>
+            
+        </form>
+
+        <div class="connect">
+            <p>Or connect with:</p>
+            <p>
+                <a class="google" id="quickstart-sign-in-with-google"></a>
+             
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+        
+    <div class="footer navbar-fixed-bottom navBer">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="navbar-brand"> 
+                    © Copyright 2017 <a class="homeLink" href=""> HarborMaster</a> <br/> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Javascript -->
+<script src="https://use.fontawesome.com/cd53706be4.js"></script>
+<!-- <script src="assets/js/harbormaster.js"></script> -->
+
+<!-- Firebase JS -->
+
+
+
+</body>
+</html>
