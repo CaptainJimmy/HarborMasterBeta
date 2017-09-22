@@ -34,7 +34,7 @@ function toggleSignIn() {
           document.getElementById('quickstart-sign-in').app = false;
           // [END_EXCLUDE]
         }).then(function(){
-            location.replace("https://captainjimmy.github.io/HarborMaster/captain.html");
+            location.replace("https://captainjimmy.github.io/HarborMasterBeta/captain.html");
         });
         // [END authwithemail]
       }
@@ -99,7 +99,7 @@ function toggleSignIn() {
           var credential = error.credential;
           
         }).then(function(){
-            location.replace("https://captainjimmy.github.io/HarborMaster/captain.html");
+            location.replace("https://captainjimmy.github.io/HarborMasterBeta/captain.html");
         });
         // [END signin]
       } else {
@@ -112,7 +112,7 @@ function toggleSignIn() {
 
     function signOut(){
         firebase.auth().signOut().then(function(){
-            location.replace("https://captainjimmy.github.io/HarborMaster/index.html");
+            location.replace("https://captainjimmy.github.io/HarborMasterBeta/index.html");
         });
     }
 
